@@ -11,6 +11,9 @@ function findFirstNumberLessThan10() {
   const nums = [12, 34, 5, 12, 99]
   
   //TODO: Use items.find to return the first item in the array with a quantity of 1
+  return nums.find(function(num) {
+    return num < 10
+  })
 }
 
 function findFirstItemWithQuantityOne() {
@@ -22,12 +25,24 @@ function findFirstItemWithQuantityOne() {
   ]
 
   //TODO: Use items.find to return the first item in the array with a quantity of 1
-}
+  return items.find(function(item) {
+      if (item.quantity === 1) {
+        return item
+      }
+    
+    })
+  }
+
 
 function findIndexTom() {
   const names = ['bob', 'jane', 'tom', 'fred']
   
   //TODO: Use names.findIndex to return the index of 'tom' in the array
+  return names.findIndex(function (name) {
+    if(name == 'tom') {
+      return name
+    }
+  })
 }
 
 function findIndexLemon() {
@@ -39,18 +54,33 @@ function findIndexLemon() {
   ]
   
   //TODO: Use items.findIndex to return the index of the item 'lemon' in the array
+  return items.findIndex(function(fruit) {
+    if (fruit.item === "lemon") {
+      return fruit
+    }
+  })
 }
 
 function allOver100() {
   const nums = [13, 16, 99, 101, 2001, 198, 10]
   
   //TODO: Use nums.filter to return an array containing every item nums that is over 100
+  return nums.filter(function(number) {
+    if (number > 100) {
+      return number
+    }
+  })
 }
 
 function startsWithM() {
   const names = ['Matt', 'Bob', 'Marie', 'Fred', 'Mike', 'Charles']
   
   //TODO: Use names.filter to return an array containing every name starting with an 'M'
+  return names.filter(function(name) {
+    if (name.includes('M')){
+      return name
+    }
+  })
 }
 
 function horrorFilms() {
@@ -74,24 +104,43 @@ function horrorFilms() {
   ]
   
   //TODO: Use films.filter to return an array containing all horror films
+  return films.filter(function(horror) {
+    if(horror.genre === 'Horror') {
+      return horror
+    }
+  })
 }
 
 function doubleEachNumber() {
   const nums = [1, 10, 100, 1000]
   
   //TODO: Use nums.map to return an array containing each number doubled
+  return nums.map(function(num) {
+    return num * 2
+  })
 }
 
 function sumNumbers() {
   const nums = [1, 10, 100, 1000]
   
   //TODO: Use nums.reduce to return the sum of all items in the array
+  const reducer = (previousValue, currentValue) => previousValue + currentValue;
+  return nums.reduce(reducer)
 }
+
 
 function findLargest() {
   const nums = [341, 120, 9121, 862]
 
   //TODO: Use nums.reduce to return the largest number in the array
+  return nums.reduce(function(currentSmallest, currentLargest) {
+    if (currentLargest > currentSmallest == true) {
+      return currentLargest
+    }
+    else {
+      return currentSmallest
+    } 
+  })
 }
 
 module.exports = {
